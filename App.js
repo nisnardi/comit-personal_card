@@ -1,4 +1,5 @@
 import { View, Text, Image, StyleSheet } from 'react-native';
+import { AntDesign } from '@expo/vector-icons';
 import myPicture from './assets/me.jpg';
 
 const App = () => {
@@ -7,11 +8,20 @@ const App = () => {
       <View style={styles.imageContainer}>
         <Image style={styles.image} source={myPicture} />
       </View>
-      <View>
-        <Text>Your Name</Text>
-        <Text>Twitter Username</Text>
-        <Text>Linkeding Username</Text>
-        <Text>Instagram Username</Text>
+      <View style={styles.iconAndText}>
+        <Text style={styles.title}>Your Name</Text>
+        <View style={styles.row}>
+          <AntDesign style={styles.icon} style={styles.icon} name="twitter" size={24} color="black" />
+          <Text>Twitter Username</Text>
+        </View>
+        <View style={styles.row}>
+          <AntDesign style={styles.icon} name="linkedin-square" size={24} color="black" />
+          <Text>Linkeding Username</Text>
+        </View>
+        <View style={styles.row}>
+          <AntDesign style={styles.icon} name="instagram" size={24} color="black" />
+          <Text>Instagram Username</Text>
+        </View>
       </View>
     </View>
   </View >
@@ -39,16 +49,22 @@ const styles = StyleSheet.create({
     shadowRadius: 3,
     elevation: 20,
   },
-  // row: {
-  //   flexDirection: 'row',
-  //   alignItems: 'center',
-  //   marginBottom: 5,
-  // },
+  title: {
+    fontSize: 32,
+    marginBottom: 5,
+  },
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 5,
+  },
+  icon: {
+    marginRight: 10,
+  },
+  iconAndText: {
+    marginTop: 30,
+    marginLeft: 20,
+  }
 });
 
 export default App;
-
-
-// flexDirection: 'row',
-//   width: '52%',
-//     justifyContent: 'space-between',
