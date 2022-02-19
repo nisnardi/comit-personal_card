@@ -2,29 +2,48 @@ import { View, Text, Image, StyleSheet } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 import myPicture from './assets/me.jpg';
 
+
+const ImageText = ({ iconName, iconColor, iconSize, children }) => {
+  const linkedinUsername = 'Linkeding Username';
+
+  return (
+    <View style={styles.row}>
+      <AntDesign style={styles.icon} name={iconName} size={iconSize} color={iconColor} />
+      <Text>{linkedinUsername}</Text>
+    </View>
+  );
+};
+
 const App = () => {
+  const name = 'Your Name';
+  const twitterUsername = 'Twitter Username';
+  const linkedinUsername = 'Linkeding Username';
+  const instagramUsername = 'Instagram Username';
+
+  // console.log(name);
+  // console.log(twitterUsername);
+  // console.log(linkedinUsername);
+  // console.log(instagramUsername);
+
   return <View style={styles.container}>
     <View style={styles.content}>
       <View style={styles.imageContainer}>
         <Image style={styles.image} source={myPicture} />
       </View>
       <View style={styles.iconAndText}>
-        <Text style={styles.title}>Your Name</Text>
-        <View style={styles.row}>
-          <AntDesign style={styles.icon} style={styles.icon} name="twitter" size={24} color="black" />
-          <Text>Twitter Username</Text>
-        </View>
-        <View style={styles.row}>
-          <AntDesign style={styles.icon} name="linkedin-square" size={24} color="black" />
-          <Text>Linkeding Username</Text>
-        </View>
-        <View style={styles.row}>
-          <AntDesign style={styles.icon} name="instagram" size={24} color="black" />
-          <Text>Instagram Username</Text>
-        </View>
+        <Text style={styles.title}>{name}</Text>
+        <ImageText iconName="twitter" iconColor="black" iconSize={24}>
+          {twitterUsername}
+        </ImageText>
+        <ImageText iconName="linkedin-square" iconColor="black" iconSize={24}>
+          {linkedinUsername}
+        </ImageText>
+        <ImageText iconName="instagram" iconColor="black" iconSize={24}>
+          {instagramUsername}
+        </ImageText>
       </View>
     </View>
-  </View >
+  </View>
 };
 
 const styles = StyleSheet.create({
