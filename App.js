@@ -1,18 +1,6 @@
 import { View, Text, Image, StyleSheet } from 'react-native';
-import { AntDesign } from '@expo/vector-icons';
+import { ImageText } from './components/ImageText';
 import myPicture from './assets/me.jpg';
-
-
-const ImageText = ({ iconName, iconColor, iconSize, children }) => {
-  const linkedinUsername = 'Linkeding Username';
-
-  return (
-    <View style={styles.row}>
-      <AntDesign style={styles.icon} name={iconName} size={iconSize} color={iconColor} />
-      <Text>{linkedinUsername}</Text>
-    </View>
-  );
-};
 
 const App = () => {
   const name = 'Your Name';
@@ -71,14 +59,6 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 32,
     marginBottom: 5,
-  },
-  row: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 5,
-  },
-  icon: {
-    marginRight: 10,
   },
   iconAndText: {
     marginTop: 30,
