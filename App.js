@@ -1,6 +1,6 @@
 import { View, Text, Image, StyleSheet } from 'react-native';
 import { ImageText } from './components/ImageText';
-import myPicture from './assets/me.jpg';
+import myPicture from './assets/me.png';
 
 const App = () => {
   const name = 'Your Name';
